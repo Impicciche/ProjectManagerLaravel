@@ -16,10 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Route::middleware('auth:api')->resource('project', "ProjectController");
 Route::resource('project', "ProjectController");
-Route::resource('task', "TaskController");
 Route::resource('client', "ClientController");
+Route::middleware('jwt.auth')->resource('task', "TaskController");
 
 Route::group([
 
@@ -28,6 +27,7 @@ Route::group([
 
 ], function ($router) {
 
+    // Route::resource('task', "TaskController");
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
