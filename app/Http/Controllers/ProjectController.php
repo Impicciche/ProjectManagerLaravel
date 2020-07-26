@@ -82,4 +82,21 @@ class ProjectController extends Controller
     {
         //
     }
+
+    public function client(Project $p){
+        return $p->client();
+    }
+
+    public function tasks(Proect $p)
+    {
+        return $p->tasks();
+    }
+    public function messages(Proect $p)
+    {
+        return $p->messages();
+    }
+    public function userResponsable(Proect $p)
+    {
+        return $p->userResponsable();
+    }
 }

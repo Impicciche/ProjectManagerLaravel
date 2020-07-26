@@ -3,44 +3,38 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Client;
 
-class Client extends Model
+class Roles extends Model
 {
     public function index(){
-        return Client::all();
-    }
 
+    }
+    
     public function store(){
 
     }
-
+    
     public function create(){
-        $client = new Client();
 
-        
     }
-
+    
     public function update(){
 
     }
-
+    
     public function destroy(){
 
     }
-
+    
     public function show(){
 
     }
-
+    
     public function edit(){
 
     }
-
-    public function projects(){
-        return hasMany("App\Project","client_id","id");
-    }
-    public function contacts(){
-        return hasMany("App\Contact","client_id","id");
+    
+    public function users(){
+        return belongsToMany("App\User","roles_users");
     }
 }

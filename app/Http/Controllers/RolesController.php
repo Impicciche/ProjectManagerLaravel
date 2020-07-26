@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Task;
+use App\Roles;
 use Illuminate\Http\Request;
 
-class TaskController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return Task::all();
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Task  $task
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show(Roles $roles)
     {
         //
     }
@@ -52,10 +52,10 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Task  $task
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit(Roles $roles)
     {
         //
     }
@@ -64,10 +64,10 @@ class TaskController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Task  $task
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, Roles $roles)
     {
         //
     }
@@ -75,21 +75,14 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Task  $task
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy(Roles $roles)
     {
         //
     }
-
-    public function users(Task $task){
-        return $task->users()->get();
-    }
-    public function userCreator(Task $task){
-        return $task->userCreator()->get();
-    }
-    public function project(Task $task){
-        return $task->userCreator()->get();
+    public function roles(Role $role){
+        return $role->users();
     }
 }
