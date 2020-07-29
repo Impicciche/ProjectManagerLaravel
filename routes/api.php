@@ -13,14 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
 
 Route::group([
 
-    'middleware' => 'jwt.auth',
+    'middleware' => ['jwt.auth'],
 
 ], function ($router) {
     Route::resource('project', "ProjectController");
@@ -48,7 +48,7 @@ Route::group([
 
 Route::group([
 
-    'middleware' => 'api',
+    'middleware' => ['api'],
     'prefix' => 'auth'
 
 ], function ($router) {
