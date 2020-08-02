@@ -31,7 +31,7 @@ Route::group([
     Route::get('user/tasks', "UserController@tasks");
     Route::get('user/tasks/created', "UserController@createdTasks");
     Route::get('user/roles', "UserController@roles");
-    Route::get('role/{role}/users', "RoleController@users");
+    Route::get('role/{role}/users', "RolesController@users");
     Route::get('user/messages', "UserController@messages");
     Route::get('user/createdProjects', "UserController@projects");
     Route::get('task/{task}/users', "TaskController@users");
