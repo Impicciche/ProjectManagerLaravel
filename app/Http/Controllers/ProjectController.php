@@ -12,6 +12,10 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+        return Project::where("title","like", "%" . $request->search . "%")->orWhere("description","like", "%" . $request->search . "%")->get();
+    }
     public function index()
     {
         return Project::all();

@@ -24,6 +24,7 @@ Route::group([
 
 ], function ($router) {
     Route::resource('project', "ProjectController");
+    Route::post('project/search', "ProjectController@search");
     Route::resource('client', "ClientController");
     Route::resource('task', "TaskController");
     Route::resource('message', "MessageController");
