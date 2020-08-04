@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    private $title;
+    private $description;
+    private $status;
     
     public function userResponsable(){
         return belongsTo("App\User","id","responsable_id");
