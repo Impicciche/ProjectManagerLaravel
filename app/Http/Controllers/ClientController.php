@@ -22,9 +22,16 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $client = new Client();
+
+        $client->company_name=$request->input('company');
+        $client->tva=$request->input('tva');
+        
+        $client->save();
+
+        return $client->id;
     }
 
     /**

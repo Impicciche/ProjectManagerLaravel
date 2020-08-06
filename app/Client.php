@@ -7,6 +7,8 @@ use App\Client;
 
 class Client extends Model
 {
+    
+    
     public function index(){
         return Client::all();
     }
@@ -16,8 +18,6 @@ class Client extends Model
     }
 
     public function create(){
-        $client = new Client();
-
         
     }
 
