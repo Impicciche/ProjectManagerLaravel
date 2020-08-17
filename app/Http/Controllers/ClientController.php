@@ -24,14 +24,6 @@ class ClientController extends Controller
      */
     public function create(Request $request)
     {
-        $client = new Client();
-
-        $client->company_name=$request->input('company');
-        $client->tva=$request->input('tva');
-        
-        $client->save();
-
-        return $client->id;
     }
 
     /**
@@ -42,6 +34,14 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $client = new Client();
+
+        $client->company_name=$request->input('company');
+        $client->tva=$request->input('tva');
+        
+        $client->save();
+
+        return $client->id;
         //
     }
 

@@ -20,9 +20,9 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
 
 Route::group([
 
-    'middleware' => ['jwt.auth'],
+    'middleware' => ['jwt.auth','cors'],
 
-], function ($router) {
+], function($router) {
     Route::resource('project', "ProjectController");
     Route::post('project/search', "ProjectController@search");
     Route::resource('client', "ClientController");
